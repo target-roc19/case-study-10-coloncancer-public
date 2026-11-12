@@ -96,7 +96,7 @@ Note:
 
 ## License
 
-See [License](https://github.com/target-roc19/case-study-10-covid19-public/LICENSE.txt)
+See [License](https://github.com/target-roc19/case-study-10-coloncancer-public/blob/main/LICENSE.txt)
 
 ## Contact
 For questions or support, contact:
