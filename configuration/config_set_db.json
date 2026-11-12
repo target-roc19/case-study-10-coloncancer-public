@@ -1,0 +1,29 @@
+{
+    "data_model": "OMOP",
+    "operations_path": "R",
+    "file_format": "CSV",
+    "operations": {
+        "DuplicateRemover": false,
+        "MissingRemover": false,
+        "UniqueIdGenerator": true
+    },
+    "cdm_tables_names": [
+        "condition_occurrence",
+        "death",
+        "drug_exposure",
+        "measurement",
+        "observation",
+        "observation_period",
+        "person",
+        "procedure_occurrence",
+        "vocabulary"
+    ],
+    "unique_id_generator": {
+        "order_by_cols": [],
+        "id_name": "ori_id",
+        "separator_id": "-",
+        "instance_name": "",
+        "schema_name": "cdm_synthea10",
+        "to_view": true
+    }
+}

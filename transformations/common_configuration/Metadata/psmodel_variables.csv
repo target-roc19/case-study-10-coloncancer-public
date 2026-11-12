@@ -1,0 +1,10 @@
+var,vartype,reference_category,label,force_in
+SV_AGE,NUM,NA,Age (years),TRUE
+SV_SEX,CAT,F,Sex (female),TRUE
+SV_ECOG_STATUS,CAT,0,ECG PS,TRUE
+SV_METASTASIS_LIVER,TF,FALSE,Liver,TRUE
+SV_METASTASIS_LUNG,TF,FALSE,Lung,TRUE
+SV_SITE_SIDEDNESS,CAT,COLON_LEFT,Site of primary tumour,TRUE
+SV_MUTATION_RAS,CAT,present_KRASG12C,RAS mutation status,TRUE
+SV_MUTATION_BRAF,CAT,present_nonV600E_or_unk_type,BRAF mutation status,TRUE
+SV_DIAGNOSED_IN_2021,TF,FALSE,Year of diagnosis (2021),TRUE

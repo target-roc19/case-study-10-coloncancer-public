@@ -1,0 +1,19 @@
+var,type,expectedCat,label,parent,parent_cat,header,check_missingness_ps
+SV_AGE,NUM1,NA,Age (years),,,Demographics,FALSE
+SV_SEX,CAT,F,Female,,,,FALSE
+SV_ECOG_STATUS,CAT,"0,1",ECOG PS*,,,,FALSE
+SV_SITE_SIDEDNESS,CAT,"COLON_LEFT, COLON_RIGHT, COLON_UNKNOWN, RECTOSIGMOID, RECTUM",Site of primary tumour,,,,FALSE
+SV_METASTASIS_LIVER,TF,TRUE,Liver*,,,Topography of metastasis,FALSE
+SV_METASTASIS_LUNG,TF,TRUE,Lung,,,,FALSE
+SV_METASTASIS_LYMPH,TF,TRUE,Lymph,,,,FALSE
+SV_METASTASIS_PERITONEUM,TF,TRUE,Peritoneum,,,,FALSE
+SV_METASTASIS_OTHER,TF,TRUE,Other,,,,FALSE
+SV_METASTASIS_MULTIPLE,CAT,"1,2,3,4,5",Multiple,,,,FALSE
+SV_MUTATION_RAS,CAT,"present_KRASG12C, present_RAS_or_unk_type, absent, present_KRASG12C_and_unk_type",RAS mutation status,,,,FALSE
+SV_MUTATION_BRAF,CAT,"present_nonV600E_or_unk_type, present_V600E, absent",BRAF mutation status,,,,FALSE
+SV_COMORB_CVD,TF,TRUE,Cardiovascular disease,,,Comorbidities,FALSE
+SV_COMORB_HT,TF,TRUE,Hypertension,,,,FALSE
+SV_COMORB_HC,TF,TRUE,Hypercholesterolemia ,,,,FALSE
+SV_COMORB_DM,TF,TRUE,Diabetes Mellitus,,,,FALSE
+SV_DIAGNOSED_IN_2015,TF,TRUE,Year of diagnosis (2015),,,,FALSE
+SV_DIAGNOSED_IN_2021,TF,TRUE,Year of diagnosis (2021),,,,FALSE

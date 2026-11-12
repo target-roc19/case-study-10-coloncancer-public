@@ -1,0 +1,40 @@
+# ---------------------------------------------------
+# T2 directories
+# ---------------------------------------------------
+T2:
+  name: "semantic_harmonization"
+  root: transformations/T2_semantic_harmonization
+  intermediate: intermediate_data_file
+  config: configuration
+  source_code: source_code
+  sql_queries: source_code/sql
+  functions: source_code/functions
+
+# ---------------------------------------------------
+# T2 Semantic Harmonization Configuration
+# ---------------------------------------------------
+names_keep: null
+package_T2DMM: transformations/common_functionality/T2.DMM_0.1.0.tar.gz
+count_rows_flag: true # what use?
+
+sql_dir:
+  transformations/T2_semantic_harmonization/source_code/sql/
+
+
+# ---------------------------------------------------
+# Clean previous run
+# ---------------------------------------------------
+cleanup:
+  intermediate_data_file: true
+
+# ---------------------------------------------------
+# T2 Substeps
+# ---------------------------------------------------
+substep:
+  prepare_db_omop: false
+  set_db_omop: true
+  process_persons: true
+  process_observation_periods: true
+  create_simple_concepts_omop: true
+  create_complex_concepts: true
+  get_counts_all_concepts: true

@@ -1,0 +1,38 @@
+# ---------------------------------------------------
+# Clean previous run
+# ---------------------------------------------------
+cleanup:
+  intermediate_data_file: true
+  
+# ---------------------------------------------------  
+# T4 directories
+# ---------------------------------------------------
+T4:
+  name: "statistical_analysis"
+  root: transformations/T4_statistical_analysis
+  intermediate: intermediate_data_file
+  config: configuration
+  source_code: source_code
+  functions: source_code/functions
+
+# ---------------------------------------------------
+# T4 Substeps
+# ---------------------------------------------------
+substep:
+  create_table_1_1: true
+  create_table_1_2: true
+  create_table_2: true
+  describe_d4_StudyCohort_IPTW: true
+  create_d4_StudyCohort_Analysis: true
+  create_table_3: true
+  create_table_4: true
+  create_table_4_est2: true
+  create_table_5: true
+  create_table_6_1_2: true
+  create_table_8_1_2: true
+  create_figure_2: true
+  input_tables_qba: true
+  create_figure_4: true
+  create_figure_5: true
+  create_figure_8_9: true
+  create_figure_8_9_unw: true

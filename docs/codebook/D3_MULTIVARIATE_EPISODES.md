@@ -1,0 +1,43 @@
+## Metadata
+
+| Table name                | D3_MULTIVARIATE_EPISODES                                                                                                                                         |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Description               | The univariate episodes of all eligibility study variables combined into one time line per person: a new row starts whenever any of the variables changes value. |
+| Source                    | D3_UNIVARIATE_EPISODES; D3_SPELLS; RWE-BRIDGE study_variables.csv                                                                                                |
+| Step                      | transformations/T3_study_design/source_code/create_multivariate_episodes.R (episodeR::multivariate_episodes_pipeline)                                            |
+| Content                   | One row per person and period, with one column per eligibility study variable                                                                                    |
+| Population                | All persons in D3_SPELLS                                                                                                                                         |
+| Unit of Observation (UoO) | Spell/Status; one or more rows per person (key: person_id, start_episode)                                                                                        |
+| File format               | Parquet file (data/D3_study_variables/D3_MULTIVARIATE_EPISODES.parquet)                                                                                          |
+
+## Codebook
+
+| variable_in_output           | variable(s) needed                                              | retrieved | computed | format    | rule_of_calculation                                                                        | description                                    | vocabulary    |
+| ---------------------------- | --------------------------------------------------------------- | --------- | -------- | --------- | ------------------------------------------------------------------------------------------ | ---------------------------------------------- | ------------- |
+| person_id                    | D3_UNIVARIATE_EPISODES:person_id                                | x         |          | Integer   |                                                                                            | key identifier                                 |               |
+| start_episode                | D3_UNIVARIATE_EPISODES:start_episode                            |           | x        | Date      | start of the period during which every study variable holds the same combination of values | start date of the episode                      |               |
+| end_episode                  | D3_UNIVARIATE_EPISODES:end_episode                              |           | x        | Date      | end of that period                                                                         | end date of the episode                        |               |
+| SV_AGE_18_OR_OLDER           | D3_UNIVARIATE_EPISODES/variable_id=SV_AGE_18_OR_OLDER           | x         |          | Boolean   | value of SV_AGE_18_OR_OLDER during the episode                                             | age of 18 years or older                       | TRUE, FALSE   |
+| SV_FIRST_CRC_DIAGNOSIS       | D3_UNIVARIATE_EPISODES/variable_id=SV_FIRST_CRC_DIAGNOSIS       | x         |          | Boolean   | value of SV_FIRST_CRC_DIAGNOSIS during the episode                                         | first CRC diagnosis in the look-back period    | TRUE, FALSE   |
+| SV_STAGE4                    | D3_UNIVARIATE_EPISODES/variable_id=SV_STAGE4                    | x         |          | Boolean   | value of SV_STAGE4 during the episode                                                      | cancer diagnosis is stage 4                    | TRUE, FALSE   |
+| SV_CRC_DIAGNOSIS             | D3_UNIVARIATE_EPISODES/variable_id=SV_CRC_DIAGNOSIS             | x         |          | Boolean   | value of SV_CRC_DIAGNOSIS during the episode                                               | has a CRC diagnosis                             | TRUE, FALSE   |
+| SV_ECOG_STATUS               | D3_UNIVARIATE_EPISODES/variable_id=SV_ECOG_STATUS               | x         |          | Character | value of SV_ECOG_STATUS during the episode                                                 | latest ECOG performance status                 | 0, 1, 2, 3, 4 |
+| SV_DIAG_EXCL                 | D3_UNIVARIATE_EPISODES/variable_id=SV_DIAG_EXCL                 | x         |          | Character | value of SV_DIAG_EXCL during the episode                                                   | exclusion diagnosis category                    | see study variable definition |
+| SV_RT_EXCL                   | D3_UNIVARIATE_EPISODES/variable_id=SV_RT_EXCL                   | x         |          | Boolean   | value of SV_RT_EXCL during the episode                                                     | radiotherapy exclusion criterion                | TRUE, FALSE   |
+| SV_SX_EXCL                   | D3_UNIVARIATE_EPISODES/variable_id=SV_SX_EXCL                   | x         |          | Boolean   | value of SV_SX_EXCL during the episode                                                     | surgery exclusion criterion                     | TRUE, FALSE   |
+| SV_CAPECITABINE              | D3_UNIVARIATE_EPISODES/variable_id=SV_CAPECITABINE              | x         |          | Boolean   | value of SV_CAPECITABINE during the episode                                                | capecitabine treatment status                   | TRUE, FALSE   |
+| SV_OXALIPLATIN               | D3_UNIVARIATE_EPISODES/variable_id=SV_OXALIPLATIN               | x         |          | Boolean   | value of SV_OXALIPLATIN during the episode                                                 | oxaliplatin treatment status                    | TRUE, FALSE   |
+| SV_BEVACIZUMAB               | D3_UNIVARIATE_EPISODES/variable_id=SV_BEVACIZUMAB               | x         |          | Boolean   | value of SV_BEVACIZUMAB during the episode                                                 | bevacizumab treatment status                    | TRUE, FALSE   |
+| SV_METASTASIS_LIVER          | D3_UNIVARIATE_EPISODES/variable_id=SV_METASTASIS_LIVER          | x         |          | Boolean   | value of SV_METASTASIS_LIVER during the episode                                            | liver metastasis status                         | TRUE, FALSE   |
+| SV_DIAGNOSED_IN_2015         | D3_UNIVARIATE_EPISODES/variable_id=SV_DIAGNOSED_IN_2015         | x         |          | Boolean   | value of SV_DIAGNOSED_IN_2015 during the episode                                           | diagnosed in 2015 eligibility window            | TRUE, FALSE   |
+| SV_DIAGNOSED_IN_2021         | D3_UNIVARIATE_EPISODES/variable_id=SV_DIAGNOSED_IN_2021         | x         |          | Boolean   | value of SV_DIAGNOSED_IN_2021 during the episode                                           | diagnosed in 2021 eligibility window            | TRUE, FALSE   |
+| SV_CAPECITABINE_END          | D3_UNIVARIATE_EPISODES/variable_id=SV_CAPECITABINE_END          | x         |          | Boolean   | value of SV_CAPECITABINE_END during the episode                                            | capecitabine discontinuation indicator          | TRUE, FALSE   |
+| SV_OXALIPLATIN_END           | D3_UNIVARIATE_EPISODES/variable_id=SV_OXALIPLATIN_END           | x         |          | Boolean   | value of SV_OXALIPLATIN_END during the episode                                             | oxaliplatin discontinuation indicator           | TRUE, FALSE   |
+| SV_BEVACIZUMAB_END           | D3_UNIVARIATE_EPISODES/variable_id=SV_BEVACIZUMAB_END           | x         |          | Boolean   | value of SV_BEVACIZUMAB_END during the episode                                             | bevacizumab discontinuation indicator           | TRUE, FALSE   |
+
+## Processing Steps
+
+1. Select the rows of `study_variables.csv` with `eligibility == TRUE`.
+2. `episodeR::multivariate_episodes_pipeline` explodes the univariate episodes onto a shared time line per person, combines them, and merges consecutive periods that carry the same combination of values.
+
+This table is the input of `create_eligibility.R`, which adds the eligibility flags; see [D3_ELIGIBILITY](D3_ELIGIBILITY.md).

@@ -1,0 +1,245 @@
+DEAP_configuration:
+  name: NKR
+  data_instance: data/D2_cdm/OMOP_NKR_CS10
+  database_path: data/D2_cdm/d2.duckdb
+  data_model: OMOP
+prepare_db_omop:
+  cdm_metadata: transformations/common_configuration/CDM_metadata.rds
+  auxiliary_functions: transformations/common_functionality/functions/move_table_schema.R
+  database_loader_config: configuration/config_set_db.json
+  output: data/D2_cdm/d2.duckdb
+set_db_omop:
+  cdm_metadata: transformations/common_configuration/CDM_metadata.rds
+  auxiliary_functions: transformations/common_functionality/functions/move_table_schema.R
+  database_loader_config: configuration/config_set_db.json
+  output: data/D2_cdm/d2.duckdb
+create_simple_concepts_omop:
+  since_when_data_complete: transformations/T2_semantic_harmonization/intermediate_data_file/since_when_data_complete.rds
+  d3_spells: data/D3_study_variables/D3_SPELLS.parquet
+create_complex_concepts:
+  spells_dir: data/D3_study_variables/D3_SPELLS.parquet
+  input_dir: data/D3_study_variables/D3_CONCEPTS_parquet
+  # output_dir: transformations/T2_semantic_harmonization/intermediate_data_file/complex_concepts
+  output_dir: data/D3_study_variables/D3_CONCEPTS_parquet
+  concept_meaning: transformations/common_configuration/RWE-BRIDGE/concept_meaning.csv
+  functions: transformations/T2_semantic_harmonization/source_code/functions
+process_persons:
+  persons: data/D2_cdm/d2.duckdb
+  cdm_source: data/D2_cdm/d2.duckdb
+  source_file: ~
+  output_persons: transformations/T2_semantic_harmonization/intermediate_data_file
+process_observation_periods:
+  D3_person_file: data/D3_study_variables/D3_PERSONS.parquet
+  observation_periods_file: data/D2_cdm/d2.duckdb
+get_counts_all_concepts: ~
+episodes_and_eligibility:
+  d3_spells: data/D3_study_variables/D3_SPELLS.parquet
+  d3_rsvproducts: data/D3_study_variables/d3_rsvproducts.parquet
+  d3_all_concepts: data/D3_study_variables/D3_CONCEPTS_parquet
+  d3_univariate_episodes: data/D3_study_variables/D3_UNIVARIATE_EPISODES_parquet
+  d3_multivariate_episodes: data/D3_study_variables/D3_MULTIVARIATE_EPISODES.parquet
+  source_info: ~
+studyvariables_anchored:
+  d3_all_concepts: data/D3_study_variables/D3_CONCEPTS_parquet
+  d3_eligibility: data/D3_study_variables/D3_ELIGIBILITY.parquet
+  output_anchoring: data/D4_analytic_datasets/D4_STUDYVARIABLES_ANCHORED.parquet
+studyvariables_anchored_temp: ~
+create_population_vaccinated: ~
+create_D5_table1_1: ~
+create_D5_table1_2: ~
+create_D5_figure1: ~
+create_D6_table1_1: ~
+create_D6_table1_2: ~
+run_hash_log_export: ~
+
+outputs:
+  dir_d3: data/D3_study_variables
+  dir_d4: data/D4_analytic_datasets
+  dir_d5: data/D5_results
+  dir_d6: data/D6_report
+
+create_table_4.R:
+  input: 
+    dir_d4: data/D4_analytic_datasets
+  functions:
+    dir_common: transformations/common_functionality/functions
+  output:
+    dir_d5: data/D5_results
+    save_output: true
+
+
+create_table_3.R:
+  input:
+    dir_d4: data/D4_analytic_datasets
+    dir_metadata: transformations/common_configuration/Metadata
+  functions:
+    dir_common: transformations/common_functionality/functions
+  output:
+    dir_d5: data/D5_results
+    save_output: true
+    
+    
+    
+create_eligibility:
+  d3_multivariate_episodes: data/D3_study_variables
+  output: data/D3_study_variables
+  functions:
+    dir_common: transformations/common_functionality/functions
+create_table_1_1.R:
+  input:
+    dir_d3: data/D3_study_variables
+  functions:
+    dir_common: transformations/common_functionality/functions
+  output:
+    dir_d5: data/D5_results
+    save_output: true
+
+create_table_2.R:
+  input:
+    dir_d3: data/D3_study_variables
+    dir_d4: data/D4_analytic_datasets
+  functions:
+    dir_common: transformations/common_functionality/functions
+  output:
+    dir_d5: data/D5_results
+    save_output: true
+    
+create_cohort.R:
+  input:
+    dir_d3: data/D3_study_variables
+  functions:
+    dir_common: transformations/common_functionality/functions
+  output:
+    dir_d4: data/D4_analytic_datasets
+    save_output: true
+
+create_anchored_datasets.R:
+  input:
+    cohort_dir: data/D4_analytic_datasets
+    concepts_dir: data/D3_study_variables/D3_CONCEPTS_parquet
+    metadata_dir: transformations/T3_study_design/metadata
+  output:
+    dir_d4: data/D4_analytic_datasets
+    save_output: true
+    anchoring_dir: data/D3_study_variables/D3_ANCHORED_VARIABLES_parquet
+    baseline_cov_file: D4_StudyCohortCovariates
+    fup_file: D4_StudyCohortFup
+create_table_1_2.R:
+  input:
+    dir_d3: data/D3_study_variables
+  output:
+    dir_d5: data/D5_results
+    save_output: true
+
+create_table_5.R:
+  input:
+    dir_d4: data/D4_analytic_datasets
+  functions:
+    dir_common: transformations/common_functionality/functions
+  output:
+    dir_d5: data/D5_results
+    save_output: true
+
+create_table_6_1_2.R:
+  input:
+    dir_d4: data/D4_analytic_datasets
+  functions:
+    dir_common: transformations/common_functionality/functions
+  output:
+    dir_d5: data/D5_results
+    save_output: true
+
+create_table_8_1_2.R:
+  input:
+    dir_d4: data/D4_analytic_datasets
+  functions:
+    dir_common: transformations/common_functionality/functions
+  output:
+    dir_d5: data/D5_results
+    save_output: true
+
+create_figure_2.R:
+  input:
+    dir_d4: data/D4_analytic_datasets
+  functions:
+    dir_common: transformations/common_functionality/functions
+  output:
+    dir_d5: data/D5_results
+    save_output: true
+
+input_tables_qba.R:
+  input:
+    dir_d4: data/D4_analytic_datasets
+  functions:
+    dir_common: transformations/common_functionality/functions
+  output:
+    dir_d5: data/D5_results
+    save_output: true
+    
+create_figure_4.R:
+  input:
+    dir_d4: data/D4_analytic_datasets
+  functions:
+    dir_common: transformations/common_functionality/functions
+  output:
+    dir_d5: data/D5_results
+    save_output: true
+
+create_figure_8_9.R:
+  input:
+    dir_d4: data/D4_analytic_datasets
+  functions:
+    dir_common: transformations/common_functionality/functions
+  output:
+    dir_d5: data/D5_results
+    save_output: true
+
+create_figure_5.R:
+  input:
+    dir_d4: data/D4_analytic_datasets
+    dir_metadata: transformations/common_configuration/Metadata
+  functions:
+    dir_common: transformations/common_functionality/functions
+  output:
+    dir_d5: data/D5_results
+    save_output: true
+
+cs10_qba.R:
+  input:
+    dir_d5: data/D5_results
+  functions:
+    dir_common: transformations/common_functionality/functions
+  output:
+    dir_d5: data/D5_results
+    save_output: true
+compute_d4_StudyCohort_IPTW.R:
+  input:
+    dir_d4: data/D4_analytic_datasets
+    dir_metadata: transformations/common_configuration/Metadata
+  functions:
+    dir_common: transformations/common_functionality/functions
+  output:
+    dir_d4: data/D4_analytic_datasets
+    dir_d5: data/D5_results
+    save_output: true
+  ps_trim_bounds: NULL
+  se_threshold: NULL
+
+describe_d4_StudyCohort_IPTW.R:
+  input:
+    dir_d5: data/D5_results
+    dir_d4: data/D4_analytic_datasets
+    dir_metadata: transformations/common_configuration/Metadata
+  functions:
+    dir_common: transformations/common_functionality/functions
+  output:
+    dir_d5: data/D5_results
+  ps_trim_bounds: NULL
+  proposed_bounds_lower: 0.01
+  proposed_bounds_upper: 0.99
+
+create_d4_StudyCohort_Analysis.R:
+  input:
+    dir_d4: data/D4_analytic_datasets
+  functions:
+    dir_common: transformations/common_functionality/functions

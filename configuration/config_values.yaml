@@ -1,0 +1,9 @@
+start_study_date: 2015-01-01
+end_study_date: 2023-12-31
+start_eligibility_date: 2015-01-01
+end_eligibility_date: 2021-12-31
+end_study_date_this_report: YYYY-MM-DD
+year_length: 365.25
+month_length: 30.44
+obs_period_overlap: # from T2?
+dummy_data_used:  FALSE

@@ -1,0 +1,2 @@
+var;type;expectedCat;label;parent;parent_cat;header;check_missingness_ps
+SV_DIAG_EXCL;CAT;PANC, STES, SMIN, EGCT, NHLY, NSLC, BRCA, RECA, OVPC, CERV;;;;Previous malignancy;FALSE

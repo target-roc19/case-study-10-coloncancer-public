@@ -1,0 +1,35 @@
+# ---------------------------------------------------
+# T3 Semantic Harmonization Configuration
+# ---------------------------------------------------
+
+
+# ---------------------------------------------------
+# Clean previous run
+# ---------------------------------------------------
+cleanup:
+  intermediate_data_file: true
+  
+# ---------------------------------------------------  
+# T3 directories
+# ---------------------------------------------------
+T3:
+  name: "study_design"
+  root: transformations/T3_study_design
+  intermediate: intermediate_data_file
+  config: configuration
+  source_code: source_code
+  sql_queries: source_code/sql_queries
+  temp_db: intermediate_data_file/temp.duckdb
+
+# ---------------------------------------------------
+# T3 Substeps
+# ---------------------------------------------------
+substep:
+  create_univariate_episodes: true
+  create_multivariate_episodes: true
+  create_eligibility: true 
+  create_cohort: true
+  create_anchored_datasets: true
+  create_baseline_covariates: true
+  create_fup: true
+  compute_d4_StudyCohort_IPTW: true

@@ -1,0 +1,13 @@
+VarName,category,integerVal
+SV_SITE_SIDEDNESS,Left-sided colon,COLON_LEFT
+SV_SITE_SIDEDNESS,Right-sided colon,COLON_RIGHT
+SV_SITE_SIDEDNESS,Rectosigmoid,RECTOSIGMOID
+SV_SITE_SIDEDNESS,Rectum,RECTUM
+SV_SITE_SIDEDNESS,Unknown,COLON_UNKNOWN
+SV_MUTATION_RAS,Absent (RAS or type unknown),absent
+SV_MUTATION_RAS,Present (KRASG12C),present_KRASG12C
+SV_MUTATION_RAS,Present (RAS or type unknown),present_RAS_or_unk_type
+SV_MUTATION_RAS,Present (KRASG12C and unknown type),present_KRASG12C_and_unk_type
+SV_MUTATION_BRAF,Absent,absent
+SV_MUTATION_BRAF,Present (V600E),present_V600E
+SV_MUTATION_BRAF,Present (nonV600E or unknown type),present_nonV600E_or_unk_type

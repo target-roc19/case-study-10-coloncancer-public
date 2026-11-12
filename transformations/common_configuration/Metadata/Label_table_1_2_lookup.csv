@@ -1,0 +1,11 @@
+VarName,category,integerVal
+SV_DIAG_EXCL,Carcinoma of the pancreas,PANC
+SV_DIAG_EXCL,Carcinoma of the stomach and esopphagus,STES
+SV_DIAG_EXCL,Adenocarcinoma of the small intestine,SMIN
+SV_DIAG_EXCL,Extragonadal germ cell tumour,EGCT
+SV_DIAG_EXCL,Non-Hodgkin lymphoma,NHLY
+SV_DIAG_EXCL,Lung cancer,NSLC
+SV_DIAG_EXCL,Breast cancer,BRCA
+SV_DIAG_EXCL,Renal cell cancer,RECA
+SV_DIAG_EXCL,"Epithelial ovarian, fallopian tube, or primary peritoneal cancer	",OVPC
+SV_DIAG_EXCL,Carcinoma of the cervix,CERV

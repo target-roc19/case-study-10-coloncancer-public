@@ -1,0 +1,89 @@
+concept_id,dap_name,cdm_name,cdm_table_name,column_name_1,column_name_2,column_name_3,expected_value_1,expected_value_2,expected_value_3,keep_value_column_name,keep_date_column_name,comment
+ECOG0,NKR,OMOP,observation,observation_concept_id,,,4190931,,,,observation_date,grade0
+ECOG1,NKR,OMOP,observation,observation_concept_id,,,4161577,,,,observation_date,grade1
+ECOG2,NKR,OMOP,observation,observation_concept_id,,,4161578,,,,observation_date,grade2
+ECOG3,NKR,OMOP,observation,observation_concept_id,,,4162590,,,,observation_date,grade3
+ECOG4,NKR,OMOP,observation,observation_concept_id,,,4161579,,,,observation_date,grade4
+MUTATION_BRAF_V600E,NKR,OMOP,measurement,measurement_concept_id,value_as_concept_id,,19596981,45884084,,,measurement_date,https://athena.ohdsi.org/search-terms/terms/19596981
+MUTATION_BRAF_NONV600E,NKR,OMOP,measurement,measurement_concept_id,value_as_concept_id,,19596981,45878583,,,measurement_date,https://athena.ohdsi.org/search-terms/terms/35948173
+MUTATION_BRAF_PRESENT,NKR,OMOP,measurement,measurement_concept_id,value_as_concept_id,,35948173,45884084,,,measurement_date,
+MUTATION_BRAF_ABSENT,NKR,OMOP,measurement,measurement_concept_id,value_as_concept_id,,35948173,45878583,,,measurement_date,https://athena.ohdsi.org/search-terms/terms/35948173
+MUTATION_RAS_KRASG12C,NKR,OMOP,measurement,measurement_concept_id,value_as_concept_id,,19566395,45884084,,,measurement_date,https://athena.ohdsi.org/search-terms/terms/19566395
+MUTATION_RAS_UNK,NKR,OMOP,measurement,measurement_concept_id,value_as_concept_id,,35955429,45884084,,,measurement_date,https://athena.ohdsi.org/search-terms/terms/35955429Ê
+MUTATION_RAS_ABSENT,NKR,OMOP,measurement,measurement_concept_id,value_as_concept_id,,35955429,45878583,,,measurement_date,https://athena.ohdsi.org/search-terms/terms/35955429Ê
+CAPECITABINE,NKR,OMOP,drug_exposure,drug_concept_id,,,1337620,,,,drug_exposure_start_date,
+OXALIPLATIN_INGR,NKR,OMOP,drug_exposure,drug_concept_id,,,1318011,,,,drug_exposure_start_date,
+PLATINUMAGENT,NKR,OMOP,drug_exposure,drug_concept_id,,,35807315,,,,drug_exposure_start_date,
+BEVACIZUMAB,NKR,OMOP,drug_exposure,drug_concept_id,,,1397141,,,,drug_exposure_start_date,
+DISEASE_PROGRESSION,NKR,OMOP,observation,observation_concept_id,value_as_concept_id,,1617595,1620411,,,observation_date,https://athena.ohdsi.org/search-terms/terms/1617595
+COMORB_HC,NKR,OMOP,condition_occurrence,condition_concept_id,,,4029305,,,,condition_start_date,generated from comorbiditeiten_jvd.xlsx
+COMORB_CVD_1,NKR,OMOP,condition_occurrence,condition_concept_id,,,442774,,,,condition_start_date,generated from comorbiditeiten_jvd.xlsx
+COMORB_CVD_2,NKR,OMOP,condition_occurrence,condition_concept_id,,,321052,,,,condition_start_date,generated from comorbiditeiten_jvd.xlsx
+COMORB_CVD_3,NKR,OMOP,condition_occurrence,condition_concept_id,,,317585,,,,condition_start_date,generated from comorbiditeiten_jvd.xlsx
+COMORB_CVD_4,NKR,OMOP,condition_occurrence,condition_concept_id,,,321887,,,,condition_start_date,generated from comorbiditeiten_jvd.xlsx
+COMORB_CVD_5,NKR,OMOP,condition_occurrence,condition_concept_id,,,4155007,,,,condition_start_date,generated from comorbiditeiten_jvd.xlsx
+COMORB_CVD_6,NKR,OMOP,condition_occurrence,condition_concept_id,,,4215802,,,,condition_start_date,generated from comorbiditeiten_jvd.xlsx
+COMORB_CVD_7,NKR,OMOP,condition_occurrence,condition_concept_id,,,321319,,,,condition_start_date,generated from comorbiditeiten_jvd.xlsx
+COMORB_CVD_8,NKR,OMOP,condition_occurrence,condition_concept_id,,,442615,,,,condition_start_date,generated from comorbiditeiten_jvd.xlsx
+COMORB_CVD_9,NKR,OMOP,condition_occurrence,condition_concept_id,,,381591,,,,condition_start_date,generated from comorbiditeiten_jvd.xlsx
+COMORB_HT,NKR,OMOP,condition_occurrence,condition_concept_id,,,320128,,,,condition_start_date,generated from comorbiditeiten_jvd.xlsx
+COMORB_CVD_10,NKR,OMOP,condition_occurrence,condition_concept_id,,,4281749,,,,condition_start_date,generated from comorbiditeiten_jvd.xlsx
+COMORB_CVD_11,NKR,OMOP,condition_occurrence,condition_concept_id,,,44784217,,,,condition_start_date,generated from comorbiditeiten_jvd.xlsx
+COMORB_CVD_12,NKR,OMOP,condition_occurrence,condition_concept_id,,,313217,,,,condition_start_date,generated from comorbiditeiten_jvd.xlsx
+COMORB_DM_1,NKR,OMOP,condition_occurrence,condition_concept_id,,,201820,,,,condition_start_date,generated from comorbiditeiten_jvd.xlsx
+COMORB_DM_2,NKR,OMOP,condition_occurrence,condition_concept_id,,,44793113,,,,condition_start_date,generated from comorbiditeiten_jvd.xlsx
+COMORB_CVD_13,NKR,OMOP,condition_occurrence,condition_concept_id,,,316139,,,,condition_start_date,generated from comorbiditeiten_jvd.xlsx
+COMORB_CVD_14,NKR,OMOP,observation,observation_concept_id,value_as_concept_id,,1340204,4185932,,,observation_date,generated from comorbiditeiten_jvd.xlsx
+COMORB_CVD_15,NKR,OMOP,observation,observation_concept_id,value_as_concept_id,,1340204,321318,,,observation_date,generated from comorbiditeiten_jvd.xlsx
+COMORB_CVD_16,NKR,OMOP,observation,observation_concept_id,value_as_concept_id,,1340204,4329847,,,observation_date,generated from comorbiditeiten_jvd.xlsx
+COMORB_CVD_17,NKR,OMOP,observation,observation_concept_id,value_as_concept_id,,1340204,4006788,,,observation_date,generated from comorbiditeiten_jvd.xlsx
+COMORB_CVD_18,NKR,OMOP,observation,observation_concept_id,value_as_concept_id,,1340204,4336464,,,observation_date,generated from comorbiditeiten_jvd.xlsx
+COMORB_CVD_19,NKR,OMOP,observation,observation_concept_id,value_as_concept_id,,1340204,4216130,,,observation_date,generated from comorbiditeiten_jvd.xlsx
+COMORB_CVD_20,NKR,OMOP,observation,observation_concept_id,value_as_concept_id,,1340204,381316,,,observation_date,generated from comorbiditeiten_jvd.xlsx
+COMORB_CVD_21,NKR,OMOP,observation,observation_concept_id,value_as_concept_id,,1340204,373503,,,observation_date,generated from comorbiditeiten_jvd.xlsx
+COMORB_CVD_22,NKR,OMOP,observation,observation_concept_id,value_as_concept_id,,1340204,4145119,,,observation_date,generated from comorbiditeiten_jvd.xlsx
+COMORB_CVD_23,NKR,OMOP,observation,observation_concept_id,value_as_concept_id,,1340204,4208466,,,observation_date,generated from comorbiditeiten_jvd.xlsx
+COMORB_CVD_24,NKR,OMOP,observation,observation_concept_id,value_as_concept_id,,1340204,4133004,,,observation_date,generated from comorbiditeiten_jvd.xlsx
+COMORB_CVD_25,NKR,OMOP,observation,observation_concept_id,value_as_concept_id,,1340204,440417,,,observation_date,generated from comorbiditeiten_jvd.xlsx
+COMORB_CVD_26,NKR,OMOP,observation,observation_concept_id,value_as_concept_id,,1340204,4231363,,,observation_date,generated from comorbiditeiten_jvd.xlsx
+STAGE4_V6,NKR,OMOP,measurement,measurement_concept_id,,,1635323,,,,measurement_date,https://athena.ohdsi.org/search-terms/terms/1635323
+STAGE4_V6A,NKR,OMOP,measurement,measurement_concept_id,,,1635806,,,,measurement_date,https://athena.ohdsi.org/search-terms/terms/1635806
+STAGE4_V6A1,NKR,OMOP,measurement,measurement_concept_id,,,1635208,,,,measurement_date,https://athena.ohdsi.org/search-terms/terms/1635208
+STAGE4_V6A2,NKR,OMOP,measurement,measurement_concept_id,,,1635833,,,,measurement_date,https://athena.ohdsi.org/search-terms/terms/1635833
+STAGE4_V6B,NKR,OMOP,measurement,measurement_concept_id,,,1634488,,,,measurement_date,https://athena.ohdsi.org/search-terms/terms/1634488
+STAGE4_V6C,NKR,OMOP,measurement,measurement_concept_id,,,1634377,,,,measurement_date,https://athena.ohdsi.org/search-terms/terms/1634377
+STAGE4_V7,NKR,OMOP,measurement,measurement_concept_id,,,1633902,,,,measurement_date,https://athena.ohdsi.org/search-terms/terms/1633902
+STAGE4_V7A,NKR,OMOP,measurement,measurement_concept_id,,,1635234,,,,measurement_date,https://athena.ohdsi.org/search-terms/terms/1635234
+STAGE4_V7A1,NKR,OMOP,measurement,measurement_concept_id,,,1633929,,,,measurement_date,https://athena.ohdsi.org/search-terms/terms/1633929
+STAGE4_V7A2,NKR,OMOP,measurement,measurement_concept_id,,,1635273,,,,measurement_date,https://athena.ohdsi.org/search-terms/terms/1635273
+STAGE4_V7B,NKR,OMOP,measurement,measurement_concept_id,,,1635337,,,,measurement_date,https://athena.ohdsi.org/search-terms/terms/1635337
+STAGE4_V7C,NKR,OMOP,measurement,measurement_concept_id,,,1634250,,,,measurement_date,https://athena.ohdsi.org/search-terms/terms/1634250
+STAGE4_V8,NKR,OMOP,measurement,measurement_concept_id,,,1634131,,,,measurement_date,https://athena.ohdsi.org/search-terms/terms/1634131
+STAGE4_V8A,NKR,OMOP,measurement,measurement_concept_id,,,1635314,,,,measurement_date,https://athena.ohdsi.org/search-terms/terms/1635314
+STAGE4_V8A1,NKR,OMOP,measurement,measurement_concept_id,,,1634295,,,,measurement_date,https://athena.ohdsi.org/search-terms/terms/1634295
+STAGE4_V8A2,NKR,OMOP,measurement,measurement_concept_id,,,1633924,,,,measurement_date,https://athena.ohdsi.org/search-terms/terms/1633924
+STAGE4_V8B,NKR,OMOP,measurement,measurement_concept_id,,,1635518,,,,measurement_date,https://athena.ohdsi.org/search-terms/terms/1635518
+STAGE4_V8C,NKR,OMOP,measurement,measurement_concept_id,,,1633316,,,,measurement_date,https://athena.ohdsi.org/search-terms/terms/1633316
+STAGE4_PREV6,NKR,OMOP,measurement,measurement_concept_id,,,1633308,,,,measurement_date,https://athena.ohdsi.org/search-terms/terms/1633308
+STAGE4_PREV6A,NKR,OMOP,measurement,measurement_concept_id,,,1633439,,,,measurement_date,https://athena.ohdsi.org/search-terms/terms/1633439
+STAGE4_PREV6A1,NKR,OMOP,measurement,measurement_concept_id,,,1635355,,,,measurement_date,https://athena.ohdsi.org/search-terms/terms/1635355
+STAGE4_PREV6A2,NKR,OMOP,measurement,measurement_concept_id,,,1635066,,,,measurement_date,https://athena.ohdsi.org/search-terms/terms/1635066
+STAGE4_PREV6B,NKR,OMOP,measurement,measurement_concept_id,,,1633748,,,,measurement_date,https://athena.ohdsi.org/search-terms/terms/1633748
+STAGE4_PREV6C,NKR,OMOP,measurement,measurement_concept_id,,,1633675,,,,measurement_date,https://athena.ohdsi.org/search-terms/terms/1633675
+FLUOROUACIL,NKR,OMOP,drug_exposure,drug_concept_id,,,955632,,,,drug_exposure_start_date,https://athena.ohdsi.org/search-terms/terms/955632
+FOLINICACID,NKR,OMOP,drug_exposure,drug_concept_id,,,1388796,,,,drug_exposure_start_date,https://athena.ohdsi.org/search-terms/terms/1388796
+IRINOTECAN_1,NKR,OMOP,drug_exposure,drug_concept_id,,,1367268,,,,drug_exposure_start_date,https://athena.ohdsi.org/search-terms/terms/1367268
+IRINOTECAN_2,NKR,OMOP,drug_exposure,drug_concept_id,,,902731,,,,drug_exposure_start_date,https://athena.ohdsi.org/search-terms/terms/902731
+CETUXIMAB,NKR,OMOP,drug_exposure,drug_concept_id,,,1315411,,,,drug_exposure_start_date,https://athena.ohdsi.org/search-terms/terms/1315411
+PANITUMUMAB,NKR,OMOP,drug_exposure,drug_concept_id,,,19100985,,,,drug_exposure_start_date,https://athena.ohdsi.org/search-terms/terms/19100985
+PEMBROLIZUMAB,NKR,OMOP,drug_exposure,drug_concept_id,,,45775965,,,,drug_exposure_start_date,https://athena.ohdsi.org/search-terms/terms/45775965
+TEGAFUR,NKR,OMOP,drug_exposure,drug_concept_id,,,19056756,,,,drug_exposure_start_date,https://athena.ohdsi.org/search-terms/terms/19056756
+GIMERACIL,NKR,OMOP,drug_exposure,drug_concept_id,,,36878778,,,,drug_exposure_start_date,https://athena.ohdsi.org/search-terms/terms/36878778
+OTERACIL,NKR,OMOP,drug_exposure,drug_concept_id,,,36878777,,,,drug_exposure_start_date,https://athena.ohdsi.org/search-terms/terms/36878777
+NIVOLUMAB,NKR,OMOP,drug_exposure,drug_concept_id,,,45892628,,,,drug_exposure_start_date,https://athena.ohdsi.org/search-terms/terms/45892628
+TRIFLURIDINE,NKR,OMOP,drug_exposure,drug_concept_id,,,905078,,,,drug_exposure_start_date,https://athena.ohdsi.org/search-terms/terms/905078
+TIPIRACIL,NKR,OMOP,drug_exposure,drug_concept_id,,,35602757,,,,drug_exposure_start_date,https://athena.ohdsi.org/search-terms/terms/35602757
+CAPECITABINE_END,NKR,OMOP,drug_exposure,drug_concept_id,,,1337620,,,,drug_exposure_end_date,
+OXALIPLATIN_INGR_END,NKR,OMOP,drug_exposure,drug_concept_id,,,1318011,,,,drug_exposure_end_date,
+PLATINUMAGENT_END,NKR,OMOP,drug_exposure,drug_concept_id,,,35807315,,,,drug_exposure_end_date,
+BEVACIZUMAB_END,NKR,OMOP,drug_exposure,drug_concept_id,,,1397141,,,,drug_exposure_end_date,

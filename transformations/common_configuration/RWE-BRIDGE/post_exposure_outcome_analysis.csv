@@ -1,0 +1,7 @@
+variable_id,concept_id,start_risk_period,end_risk_period,start_washout_period,end_washout_period
+AB_IE,ABLATION,,,,
+SX_IE,SURGERY,,,,
+RT_IE,RADIOTHERAPY,,,,
+CAPE_DISC,CAPECITABINE,,,,
+OXA_DISC,OXALIPLATIN,,,,
+BEV_DISC,BEVACIZUMAB,,,,
