@@ -57,13 +57,18 @@ Each data object in the pipeline is documented in a corresponding **codebook** w
 - The `docs/codebook` folder contains the study codebooks describing each intermediate data object
 - The `transformations/common_configuration/RWE-BRIDGE` folder contains all project metadata, including events, medicines and vaccine codelists used in the study, as well as other metadata files specifying definitions of study concepts and variables.
 
+### Codelist
+
+The analysis pipeline uses a `codelist` to identify records in the source data relevant to the study objectives. This codelist, its authors, and the appropriate citation has its own DOI: [10.5281/zenodo.21219479](https://doi.org/10.5281/zenodo.21219479)
+
+
 ### Dummy Data
 
 A synthetic CDM instance designed for this case study is available from [here](https://doi.org/10.5281/zenodo.24138065) in the form of parquet files following the OMOP CDM. The data was created using [Synthea](https://github.com/synthetichealth/synthea) and the Synthea-to-OMOP ETL developed by OHDSI [here](https://github.com/ohdsi/etl-synthea). Code to produce this data available on request
 
 In addition to testing with the synthetic CDM, test data for a number of intermediate data objects can be found in `tests/testthat/test_data`
 
-## How to Run
+### How to Run
 
 1.  Download the synthetic CDM instance found [here](https://doi.org/10.5281/zenodo.24138065).
 2.  Unzip the folder and place in `data/D2_cdm`
